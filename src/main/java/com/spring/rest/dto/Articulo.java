@@ -9,21 +9,22 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Articulo")
+@Table(name = "Articulo")
 public class Articulo {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private Integer id;
+	
 	private String nombre;
 	private int precio;
-	
+
 	@ManyToOne
-	@JoinColumn(name="fabricante_id")
+	@JoinColumn(name = "fabricante_id")
 	private Fabricante fabricante;
 
 	public Articulo() {
-		
+
 	}
 
 	public Articulo(int id, String nombre, int precio, Fabricante fabricante) {
@@ -33,11 +34,11 @@ public class Articulo {
 		this.fabricante = fabricante;
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -69,7 +70,5 @@ public class Articulo {
 	public String toString() {
 		return "Articulo [id=" + id + ", nombre=" + nombre + ", precio=" + precio + ", fabricante=" + fabricante + "]";
 	}
-	
-	
-	
+
 }
